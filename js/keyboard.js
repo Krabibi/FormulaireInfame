@@ -121,8 +121,13 @@ function validateFormWinKey() {
     if (x === "") {alert("REMPLIE UNE CLE  GROS FLEMMARD");
         randomizeButtonPositions()
         return false;
-    }else if(x.length < 29){
+    }else if(x.length < 29&& verifyFormat(x)){
         alert("REMPLIE UNE VRAI CLE WINDOWS \n alleeez recommence tout");
         return false;
     }
+}
+
+function verifyFormat(text){
+    return !(text[6] !== '-' && text[12] !== '-' && text[18] !== '-' && text[24] !== '-');
+
 }

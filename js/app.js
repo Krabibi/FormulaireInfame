@@ -1,26 +1,17 @@
 const b = document.querySelector('button.button--yes')
-b.addEventListener("mouseover", (event) =>{
-    const i = Math.floor(Math.random()+500)+1;
-    const j = Math.floor(Math.random()+500)+1;
+const maxChangeButtonLocation = 10
+let nbChangesButtonLocation = 0
+b.addEventListener("mouseover", () =>{
+    if (nbChangesButtonLocation < maxChangeButtonLocation) {
+        let i = Math.floor(Math.random()*500)+1;
+        let j = Math.floor(Math.random()*500)+1;
+        if(nbChangesButtonLocation===2){
+            alert("essaie encore un peu")
+        }
 
-
-    event.target.style.left = `${i}px`;
-    event.target.style.top = `${j}px`;
-
+        b.style.left = `${i}px`;
+        b.style.top = `${j}px`;
+        nbChangesButtonLocation += 1;
+    }
 })
-
-
-
-
-
-
-let position;
-function moveHover(){
-    const i = Math.floor(Math.random()+500)+1;
-    const j = Math.floor(Math.random()+500)+1;
-
-    b.style.left = i +"px";
-    b.style.top = j + "px";
-
-}
 
